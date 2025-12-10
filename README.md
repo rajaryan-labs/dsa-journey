@@ -4,21 +4,22 @@ This repository contains my personal journey learning Data Structures and Algori
 
 ## Structure
 
-The repository is organized by topic:
+The repository is organized by topic, with descriptive filenames for easier navigation:
 
-- **binary-search**: Binary search algorithms and problems.
-- **linked-list**: Singly, doubly, and circular linked list implementations.
-- **maths-dsa**: Mathematical algorithms.
-- **oops**: Object-Oriented Programming concepts in C++.
-- **pointers**: Pointer basics and advanced usage.
-- **recursion**: Recursive algorithms.
-- **sorting**: Sorting algorithms (Bubble, Merge, Quick, etc.).
-- **stack**: Stack implementation and problems.
-- **stl-cpp**: Standard Template Library (STL) usage.
-- **strings**: String manipulation problems.
+- **binary-search**: Binary search algorithms (e.g., `binary_search_basic.cpp`).
+- **linked-list**: Implementations of Singly, Doubly, and Circular linked lists.
+- **maths-dsa**: Mathematical algorithms (e.g., Prime Count, Armstrong Number).
+- **oops**: Object-Oriented Programming concepts (Encapsulation, Polymorphism, Constructors, etc.).
+- **pointers**: Pointer concepts (Double Pointers, Pointer Arithmetic).
+- **recursion**: Recursive solutions (Subsets, Sorted Array Check).
+- **sorting**: Sorting algorithms (Merge Sort, Next Permutation, Sort Colors).
+- **stack**: Stack implementations using Vector and List, plus STL Stack usage.
+- **stl**: Standard Template Library (Vector, Sort, etc.).
+- **strings**: String manipulation (Palindrome, Permutations).
+- **queue**: Queue implementations (Deque, FIFO).
 
 ## Goals
 
 - Master core data structures.
-- improve problem-solving skills.
+- Improve problem-solving skills.
 - Prepare for technical interviews.

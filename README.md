@@ -14,7 +14,7 @@ The repository is organized by topic, with descriptive filenames for easier navi
 - **recursion**: Recursive solutions (Subsets, Sorted Array Check).
 - **sorting**: Sorting algorithms (Merge Sort, Next Permutation, Sort Colors).
 - **stack**: Stack implementations using Vector and List, plus STL Stack usage.
-- **stl**: Standard Template Library (Vector, Sort, etc.).
+- **stl**: Standard Template Library (Vector, List, Deque, Pair, Stack, Queue, Sets, Maps, etc.).
 - **strings**: String manipulation (Palindrome, Permutations).
 - **queue**: Queue implementations (Deque, FIFO).
 

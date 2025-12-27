@@ -50,8 +50,8 @@ int main() {
     for(int i=0; i<n; i++) cout << arr[i] << " ";
     cout << endl;
 
-    // 4. Partial Reverse
-    cout << "\n--- 4. Partial Reverse ---" << endl;
+    // 4. Reverse in a Particular Range
+    cout << "\n--- 4. Reverse in a Particular Range ---" << endl;
     vector<int> v2 = {10, 20, 30, 40, 50, 60};
     // Reverse only index 1 to 4 (elements 20, 30, 40)
     // Range is [start, end) -> [v2.begin()+1, v2.begin()+4)

@@ -177,6 +177,59 @@ void levelOrder(Node* root) {
       }
     }
   }
+
+}
+
+// ======================================================================================
+// CONCEPT: HEIGHT OF A TREE
+// ======================================================================================
+// The height of a tree is the number of nodes along the longest path from the root
+// to the farthest leaf.
+// Formula: Height = 1 + max(Height(Left), Height(Right))
+// Time Complexity: O(N)
+int height(Node* root) {
+  if (root == NULL) {
+    return 0;
+  }
+
+  int leftHt = height(root->left);
+  int rightHt = height(root->right);
+
+  return max(leftHt, rightHt) + 1;
+}
+
+// ======================================================================================
+// CONCEPT: COUNT OF NODES
+// ======================================================================================
+// Total number of nodes in the tree.
+// Formula: Count = 1 (Root) + Count(Left) + Count(Right)
+// Time Complexity: O(N)
+int countNode(Node* root) {
+  if (root == NULL) {
+    return 0;
+  }
+
+  int leftCount = countNode(root->left);
+  int rightCount = countNode(root->right);
+
+  return leftCount + rightCount + 1;
+}
+
+// ======================================================================================
+// CONCEPT: SUM OF NODES
+// ======================================================================================
+// Sum of all data values in the tree.
+// Formula: Sum = Root.data + Sum(Left) + Sum(Right)
+// Time Complexity: O(N)
+int sum(Node* root) {
+  if (root == NULL) {
+    return 0;
+  }
+
+  int leftSum = sum(root->left);
+  int rightSum = sum(root->right);
+
+  return leftSum + rightSum + root->data;
 }
 
 // ======================================================================================
@@ -236,7 +289,15 @@ int main() {
   cout << "Level Order Traversal (BFS):" << endl;
   levelOrder(root);
   cout << "(Expected:\n1\n2 3\n4 5)" << endl;
+
   cout << "--------------------------------------------------" << endl;
 
-  return 0;
+  cout << "\n--------------------------------------------------" << endl;
+  cout << "Tree Properties Analysis:" << endl;
+  cout << "1. Height of Tree : " << height(root) << endl;
+  cout << "2. Total Nodes    : " << countNode(root) << endl;
+  cout << "3. Sum of Nodes   : " << sum(root) << endl;
+  cout << "--------------------------------------------------" << endl;
+
+    return 0;
 }

@@ -17,7 +17,7 @@ using namespace std;
 // 3. **Parent**: The node which is a predecessor of a node.
 // 4. **Child**: The node which is the immediate successor of a node.
 // 5. **Leaf**: A node that has no children (both left and right are NULL).
-// 6. **Subtree**: A tree consisting of a node and its descendants.
+// 6. **Subtree**: A tree consisting of a node and all of its descendants.
 
 // ======================================================================================
 // CONCEPT: BINARY TREE
@@ -177,16 +177,14 @@ void levelOrder(Node* root) {
       }
     }
   }
-
 }
 
 // ======================================================================================
 // CONCEPT: HEIGHT OF A TREE
 // ======================================================================================
-// The height of a tree is the number of nodes along the longest path from the root
-// to the farthest leaf.
-// Formula: Height = 1 + max(Height(Left), Height(Right))
-// Time Complexity: O(N)
+// The height of a tree is the number of nodes along the longest path from the
+// root to the farthest leaf. Formula: Height = 1 + max(Height(Left),
+// Height(Right)) Time Complexity: O(N)
 int height(Node* root) {
   if (root == NULL) {
     return 0;
@@ -299,5 +297,5 @@ int main() {
   cout << "3. Sum of Nodes   : " << sum(root) << endl;
   cout << "--------------------------------------------------" << endl;
 
-    return 0;
+  return 0;
 }

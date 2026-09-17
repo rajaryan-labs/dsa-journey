@@ -20,7 +20,7 @@ The repository is organized by topic, with descriptive filenames for easier navi
 - **GRAPHS**: Graph Basics, BFS/DFS, Cycle Detection, Topological Sort, Dijkstra, Bellman-Ford, Prim's, Kruskal's MST (DSU), Floyd-Warshall, Bridges & Articulation Points, Strongly Connected Components (Kosaraju & Tarjan).
 - **GREEDY**: Activity Selection, Fractional Knapsack, Job Scheduling, Huffman Encoding, Jump Game, Gas Station, Candy, Merge Intervals.
 - **HEAPS**: Custom Min-Heap, Kth Largest, Top K Frequent, Merge K Sorted Lists, Median from Data Stream, Task Scheduler.
-- **LEETCODE-GRIND**: Curated LeetCode problems organized by topic.
+- **ALGORITHMIC-CHALLENGES**: Curated LeetCode and other DSA problems organized by topic.
 - **LINKED-LIST**: Singly, Doubly, and Circular linked list implementations and exercises.
 - **MATHS**: Mathematical algorithms — Prime Check, Prime Count, Armstrong Number, Number Conversion.
 - **OOPs**: Object-Oriented Programming — Encapsulation, Inheritance, Polymorphism, Abstraction.

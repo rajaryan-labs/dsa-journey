@@ -66,12 +66,12 @@ void selectionSort(vector<int> arr) {
 void insertionSort(vector<int> arr) {
   int n = arr.size();
   for (int i = 1; i < n; i++) {
-    int key = arr[i], j = i - 1;
-    while (j >= 0 && arr[j] > key) {
-      arr[j + 1] = arr[j];
-      j--;
+    int curr = arr[i], prev = i - 1;
+    while (prev >= 0 && arr[prev] > curr) {
+      arr[prev + 1] = arr[prev];
+      prev--;
     }
-    arr[j + 1] = key;
+    arr[prev + 1] = curr;
   }
   printArr(arr, "Insertion Sort");
 }
@@ -195,7 +195,7 @@ void shellSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 int main() {
-  vector<int> arr = {64, 34, 25, 12, 22, 11, 90};
+  vector<int> arr = {74, 34, 25, 12, 22, 11, 90};
   cout << "===== Sorting Algorithms =====\n";
   printArr(arr, "Input");
   cout << "\n";

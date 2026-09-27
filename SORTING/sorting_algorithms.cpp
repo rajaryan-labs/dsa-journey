@@ -18,6 +18,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// ─────────────────────────────────────────────────────────────
+//  NOTE ON DESCENDING ORDER:
+//  Most ascending sorts can be converted to descending order by
+//  reversing the comparison operator (e.g., changing > to <).
+//  In C++ STL, you can use `greater<int>()` as a custom comparator:
+//  `sort(arr.begin(), arr.end(), greater<int>());`
+// ─────────────────────────────────────────────────────────────
+
 void printArr(const vector<int>& a, const string& label = "") {
   if (!label.empty()) cout << label << ": ";
   for (int x : a) cout << x << " ";
@@ -26,8 +34,11 @@ void printArr(const vector<int>& a, const string& label = "") {
 
 // ─────────────────────────────────────────────────────────────
 //  1. Bubble Sort
-//  Compare adjacent pairs, bubble max to end each pass.
-//  Optimisation: stop early if no swap in a pass.
+//  Process: Repeatedly step through the list, compare adjacent
+//  elements, and swap them if they are in the wrong order.
+//  The largest element "bubbles" to the end in each pass.
+//  Optimisation: Stop early if no swaps occur in a pass.
+//  Descending Order: Change `arr[j] > arr[j + 1]` to `<`.
 // ─────────────────────────────────────────────────────────────
 void bubbleSort(vector<int> arr) {
   int n = arr.size();
@@ -45,7 +56,10 @@ void bubbleSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 //  2. Selection Sort
-//  Find minimum in remaining array, place at front.
+//  Process: Divide the array into a sorted and unsorted region.
+//  Find the minimum element in the unsorted region and swap it
+//  with the first unsorted element.
+//  Descending Order: Find the maximum element instead (change `<` to `>`).
 // ─────────────────────────────────────────────────────────────
 void selectionSort(vector<int> arr) {
   int n = arr.size();
@@ -60,8 +74,11 @@ void selectionSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 //  3. Insertion Sort
-//  Build sorted portion left to right, insert each element.
+//  Process: Build the sorted array one item at a time. Pick the
+//  next element and insert it into its correct position among
+//  the already sorted elements by shifting larger elements right.
 //  Best for small / nearly-sorted arrays.
+//  Descending Order: Shift elements if they are smaller (change `>` to `<`).
 // ─────────────────────────────────────────────────────────────
 void insertionSort(vector<int> arr) {
   int n = arr.size();
@@ -78,8 +95,10 @@ void insertionSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 //  4. Merge Sort
-//  Divide array in half, sort each half, merge sorted halves.
+//  Process: Divide the array into two halves, recursively sort
+//  both halves, and then merge them back together in order.
 //  Stable, guaranteed O(n log n).
+//  Descending Order: In `merge`, pick the larger element (`L[i] >= R[j]`).
 // ─────────────────────────────────────────────────────────────
 void merge(vector<int>& arr, int l, int m, int r) {
   vector<int> L(arr.begin() + l, arr.begin() + m + 1);
@@ -101,8 +120,11 @@ void mergeSort(vector<int>& arr, int l, int r) {
 
 // ─────────────────────────────────────────────────────────────
 //  5. Quick Sort
-//  Partition around pivot; elements < pivot left, > pivot right.
+//  Process: Choose a 'pivot' element. Partition the array so
+//  all elements smaller than the pivot come before it, and all
+//  larger elements come after. Recursively sort the sub-arrays.
 //  Lomuto partition (simple) vs Hoare (faster in practice).
+//  Descending Order: Put larger elements before pivot (`arr[j] >= pivot`).
 // ─────────────────────────────────────────────────────────────
 int partitionLomuto(vector<int>& arr, int lo, int hi) {
   int pivot = arr[hi], i = lo - 1;
@@ -121,7 +143,10 @@ void quickSort(vector<int>& arr, int lo, int hi) {
 
 // ─────────────────────────────────────────────────────────────
 //  6. Heap Sort
-//  Build max-heap, repeatedly extract max to end.
+//  Process: Build a max-heap from the array. Repeatedly extract
+//  the maximum element (root) and swap it with the last element,
+//  then restore the heap property for the remaining elements.
+//  Descending Order: Build a min-heap instead of a max-heap.
 // ─────────────────────────────────────────────────────────────
 void heapify(vector<int>& arr, int n, int i) {
   int largest = i, l = 2 * i + 1, r = 2 * i + 2;
@@ -145,6 +170,9 @@ void heapSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 //  7. Counting Sort   — for non-negative integers in range [0,k]
+//  Process: Count the occurrences of each distinct element.
+//  Compute prefix sums to find the correct sorted positions.
+//  Descending Order: Iterate prefix sums backwards, or fill `out` from front.
 // ─────────────────────────────────────────────────────────────
 void countingSort(vector<int> arr) {
   int maxVal = *max_element(arr.begin(), arr.end());
@@ -158,7 +186,9 @@ void countingSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 //  8. Radix Sort (LSD — Least Significant Digit)
-//  Sort digit by digit using stable counting sort.
+//  Process: Sort elements digit by digit, starting from the
+//  least significant digit to the most. Uses a stable sort (Counting Sort).
+//  Descending Order: Sort digits in reverse order (9 to 0).
 // ─────────────────────────────────────────────────────────────
 void countSortByDigit(vector<int>& arr, int exp) {
   int n = arr.size();
@@ -177,7 +207,10 @@ void radixSort(vector<int> arr) {
 
 // ─────────────────────────────────────────────────────────────
 //  9. Shell Sort
-//  Insertion sort with decreasing gap sizes.
+//  Process: A generalized version of insertion sort. It sorts
+//  elements separated by a 'gap', progressively reducing the gap
+//  until it becomes 1 (which is standard insertion sort).
+//  Descending Order: Shift if elements are smaller (change `>` to `<`).
 // ─────────────────────────────────────────────────────────────
 void shellSort(vector<int> arr) {
   int n = arr.size();

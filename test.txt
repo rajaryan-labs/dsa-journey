@@ -1,0 +1,3 @@
+cd DSA\SORTING
+g++ sorting_algorithms.cpp -o sorting_algorithms
+.\sorting_algorithms.exe
